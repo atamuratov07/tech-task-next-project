@@ -1,6 +1,11 @@
 # Next.js + MaterialUI + FSD Technical Project
 
-## Using Next.js 15, React 19 RC
+#### - Using
+
+-  Next.js
+-  React
+-  Material UI
+-  Prisma ORM
 
 #### - Features and Routes
 

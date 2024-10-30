@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
-export default function Home() {
+export default async function Home() {
 	return (
 		<main>
 			<Container>
