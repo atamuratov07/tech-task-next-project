@@ -1,6 +1,5 @@
-import { ThemeProvider } from '@/features/theme/theme-provider'
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import type { Metadata } from 'next'
+import { AppProvider } from './_providers/app-provider'
 
 export const metadata: Metadata = {
 	title: 'Duckers Tech Project && Sneakers Store',
@@ -15,9 +14,7 @@ export default function RootLayout({
 	return (
 		<html lang='en' suppressHydrationWarning>
 			<body>
-				<AppRouterCacheProvider>
-					<ThemeProvider>{children}</ThemeProvider>
-				</AppRouterCacheProvider>
+				<AppProvider>{children}</AppProvider>
 			</body>
 		</html>
 	)

@@ -18,6 +18,7 @@ export function Layout({
 		<AppBar
 			position='static'
 			sx={{
+				bgcolor: 'background.default',
 				boxShadow: 'none',
 				borderBottom: `1px solid ${grey[300]}`,
 			}}
@@ -36,6 +37,7 @@ export function Layout({
 						display: 'flex',
 						flex: '1 1 auto',
 						alignItems: 'center',
+						columnGap: 2,
 						justifyContent: 'flex-end',
 					}}
 				>

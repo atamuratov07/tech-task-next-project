@@ -1,9 +1,9 @@
-import Container from '@mui/material/Container'
+import { Hero } from '@/shared/ui/hero'
 
 export default async function Home() {
 	return (
 		<main>
-			<Container></Container>
+			<Hero />
 		</main>
 	)
 }

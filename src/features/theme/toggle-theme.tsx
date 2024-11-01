@@ -1,16 +1,16 @@
 'use client'
 
 import { DarkMode, LightMode, SettingsBrightness } from '@mui/icons-material'
-import { useColorScheme } from '@mui/material'
+import { styled, useColorScheme } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 
 type ThemeMode = 'light' | 'dark' | 'system'
 
-const toggleThemeIcons: Record<ThemeMode, ReactNode> = {
+const toggleThemeIcons: Record<ThemeMode, React.ReactNode> = {
 	dark: <DarkMode />,
 	light: <LightMode />,
 	system: <SettingsBrightness />,
@@ -80,6 +80,9 @@ function ToggleThemeMenu({
 				paper: {
 					elevation: 0,
 					sx: {
+						px: 1,
+						boxShadow:
+							'0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
 						minWidth: 150,
 					},
 				},
@@ -87,40 +90,31 @@ function ToggleThemeMenu({
 			transformOrigin={{ horizontal: 'right', vertical: 'top' }}
 			anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 		>
-			<MenuItem
-				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					columnGap: 1,
-				}}
+			<ToggleThemeMenuItem
 				selected={currentMode === 'system'}
 				onClick={() => onItemClick('system')}
 			>
 				{toggleThemeIcons['system']} System
-			</MenuItem>
-			<MenuItem
-				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					columnGap: 1,
-				}}
+			</ToggleThemeMenuItem>
+			<ToggleThemeMenuItem
 				selected={currentMode === 'light'}
 				onClick={() => onItemClick('light')}
 			>
 				{toggleThemeIcons['light']} Light
-			</MenuItem>
-			<MenuItem
-				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					columnGap: 1,
-				}}
+			</ToggleThemeMenuItem>
+			<ToggleThemeMenuItem
 				selected={currentMode === 'dark'}
 				onClick={() => onItemClick('dark')}
 			>
 				{toggleThemeIcons['dark']} Dark
-			</MenuItem>
+			</ToggleThemeMenuItem>
 		</Menu>
 	)
 }
-function ToggleThemeButton() {}
+
+const ToggleThemeMenuItem = styled(MenuItem)(({ theme }) => ({
+	display: 'flex',
+	alignItems: 'center',
+	columnGap: 10,
+	borderRadius: 5,
+}))
