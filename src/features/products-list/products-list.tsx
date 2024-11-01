@@ -4,7 +4,7 @@ import { Product } from './_model/types'
 import { ProductItem } from './_ui/product-item'
 
 export async function ProductsList({ query }: { query: string }) {
-	const products = (await getProductsList({ q: query })) as Product[]
+	const products = await getProductsList({ q: query })
 	return (
 		<Grid container spacing={2} alignItems={'stretch'}>
 			{products.map(product => (
