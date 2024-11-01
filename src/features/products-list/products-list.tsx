@@ -7,7 +7,7 @@ export async function ProductsList({ query }: { query: string }) {
 	const products = await getProductsList({ q: query })
 	return (
 		<Grid container spacing={2} alignItems={'stretch'}>
-			{products.map(product => (
+			{products.map((product: Product) => (
 				<Grid key={product.title} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
 					<ProductItem product={product} />
 				</Grid>
