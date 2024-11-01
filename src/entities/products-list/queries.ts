@@ -2,9 +2,7 @@ import { prisma } from '@/shared/lib/db-prisma'
 
 export async function getProductsList({ q }: { q?: string }) {
 	try {
-		const products = await prisma?.product.findMany({
-			where: { title: { contains: q } },
-		})
+		const products = await prisma.product.findMany()
 
 		return products ?? []
 	} catch (error) {
