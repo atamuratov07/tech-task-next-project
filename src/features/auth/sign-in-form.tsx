@@ -4,6 +4,7 @@ import Divider from '@mui/material/Divider'
 import { ProviderButton } from './_ui/provider-button'
 import { Card } from './_ui/sign-in-form-card'
 import { SignInContainer } from './_ui/sign-in-form-container'
+import { Suspense } from 'react'
 
 export function SignInForm({
 	providers,
@@ -26,7 +27,9 @@ export function SignInForm({
 					</Divider>
 					<Stack direction={'column'} spacing={1}>
 						{providers.map(provider => (
-							<ProviderButton key={provider.id} provider={provider} />
+							<Suspense key={provider.id}>
+								<ProviderButton provider={provider} />
+							</Suspense>
 						))}
 					</Stack>
 				</Box>

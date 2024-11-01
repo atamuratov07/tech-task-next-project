@@ -1,16 +1,6 @@
-export async function getProductsList({
-	q,
-	orderBy,
-}: {
-	q?: string
-	orderBy?: { [key in 'price' | 'title']: 'asc' | 'desc' }
-}) {
+export async function getProductsList({ q }: { q?: string }) {
 	try {
 		const products = await prisma?.product.findMany({
-			// orderBy: {
-			// 	price: orderBy.price || 'asc',
-			// 	title: orderBy.title || 'asc',
-			// },
 			where: { title: { contains: q } },
 		})
 
