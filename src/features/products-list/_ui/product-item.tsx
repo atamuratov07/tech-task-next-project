@@ -1,4 +1,3 @@
-import { Product } from '@/features/products-list/_model/types'
 import AddRoundedIcon from '@mui/icons-material/AddRounded'
 import {
 	Box,
@@ -9,6 +8,7 @@ import {
 	Typography,
 } from '@mui/material'
 import { grey } from '@mui/material/colors'
+import { Product } from '../_model/types'
 import { StyledCard } from './product-item-card'
 
 export function ProductItem({ product }: { product: Product }) {
